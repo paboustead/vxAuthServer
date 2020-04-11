@@ -1,5 +1,5 @@
-# voxeet_token_server
-Voxeet Token Server
+# Token Server
+VX Token Server
 
 1. Edit auth.js to add your consumerKey and consumerSecret
 2. run 'npm install'
@@ -18,4 +18,3 @@ Response:
     "expires_in": 3600
 }
 
-Note this is unofficial sample code: got to voxeet.com for official documentation and samples
