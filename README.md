@@ -1,2 +1,21 @@
 # voxeet_token_server
 Voxeet Token Server
+
+1. Edit auth.js to add your consumerKey and consumerSecret
+2. run 'npm install'
+3. run 'node server.js'
+
+API to get API access token: POST http://hostname/auth/token
+API to refresh API access token key: POST http://hostname/auth/token
+
+Voxeet documention:
+
+Response:
+{
+    "token_type": "Bearer",
+    "access_token": "TOKEN",
+    "refresh_token": "TOKEN",
+    "expires_in": 3600
+}
+
+Note this is unofficial sample code: got to voxeet.com for official documentation and samples
