@@ -13,7 +13,8 @@ API calls:
 2) POST http://hostname/auth/refresh - refresh access token 
 
 Response:
-{
+
+- {
     "token_type": "Bearer",
     "access_token": "TOKEN",
     "refresh_token": "TOKEN",
