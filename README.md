@@ -11,8 +11,6 @@ NOTE: You need to setup HTTPS to use this token server with your VX application.
 API to get API access token: POST http://hostname/auth/token
 API to refresh API access token key: POST http://hostname/auth/token 
 
-Voxeet documention:
-
 Response:
 {
     "token_type": "Bearer",
