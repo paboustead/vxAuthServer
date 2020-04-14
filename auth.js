@@ -5,7 +5,7 @@ const https = require('https');
 consumerKey='****INSERT_YOUR_KEY_HERE****';
 consumerSecret='****INSERT_YOUR_SECRET_HERE****';
 
-router.post('/token',(req, res, next) => {
+router.get('/token',(req, res, next) => {
     const credentials = new Buffer.from(consumerKey+':'+consumerSecret).toString('base64');
     
     const data = JSON.stringify({
@@ -31,14 +31,15 @@ router.post('/token',(req, res, next) => {
         response.on('end', function() {
           res.contentType='application/json;charset=UTF-8';
           res.status(200).json(JSON.parse(token));
+          console.log(`get new token: ${token}`);
         })
-      });
-      httpreq.write(data);
-      httpreq.end();
+    });
+    httpreq.write(data);
+    httpreq.end();
     
 })
 
-router.post('/refresh',(req, res, next) => {
+router.get('/refresh',(req, res, next) => {
     const credentials = new Buffer.from('YTRtMDZyanI1cHI2Nw=='+':'+'M3NtajhtZ2RzMzk3NmtoanNmNDlwY2lsY2w=').toString('base64');
     
     const data = JSON.stringify({
@@ -64,10 +65,11 @@ router.post('/refresh',(req, res, next) => {
         response.on('end', function() {
           res.contentType='application/json;charset=UTF-8';
           res.status(200).json(JSON.parse(token));
+          console.log(`refresh: ${token}`);
         })
-      });
-      httpreq.write(data);
-      httpreq.end();
+    });
+    httpreq.write(data);
+    httpreq.end();
     
 })
 
