@@ -40,7 +40,7 @@ router.get('/token',(req, res, next) => {
 })
 
 router.get('/refresh',(req, res, next) => {
-    const credentials = new Buffer.from('YTRtMDZyanI1cHI2Nw=='+':'+'M3NtajhtZ2RzMzk3NmtoanNmNDlwY2lsY2w=').toString('base64');
+    const credentials = new Buffer.from(consumerKey+':'+consumerSecret).toString('base64');
     
     const data = JSON.stringify({
         "refresh_token": "string",
